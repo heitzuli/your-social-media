@@ -6,20 +6,28 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+        <div className="App-body">
+            <Welcome />
+            <MyInput />
+        </div>
     </div>
   );
+
+  function Welcome() {
+    return (
+        <p>Safe place to share creativity in all forms</p>
+    )
+  }
+  function MyInput() {
+    return (
+        <form className="button-pads">
+          <label>Share: </label>
+          <input type="text" className="button-pads"/>
+            <button>Tell people!</button>
+        </form>
+    )
+  }
 }
 
 export default App;
