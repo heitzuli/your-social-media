@@ -22,8 +22,8 @@ function App() {
   function MyInput() {
     return (
         <form className="button-pads">
-          <label>Share: </label>
-          <input type="text" className="button-pads"/>
+          <label className="text-on-top">Share: </label>
+            <textarea name="Text1" cols="40" rows="5"></textarea>
             <button>Tell people!</button>
         </form>
     )
