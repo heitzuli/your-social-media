@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
   pointer-events: none;
 }
 
@@ -14,8 +14,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: indianred;
+  height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,9 +23,84 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.App-body {
+  background-color: cornflowerblue;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
 
 .App-link {
   color: #61dafb;
+}
+
+.text-on-top {
+  vertical-align: top;
+}
+
+textarea {
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+
+button {
+  position: relative;
+  width: max-content;
+  height: max-content;
+  padding: 5px;
+  margin-left: 20px;
+  border-radius: 25px;
+  border: 2px solid rgb(231, 50, 50);
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 10px #333;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.delete-button {
+  width: 50px;
+  height: 50px;
+}
+
+.delete-button:hover {
+  background-color: rgb(245, 207, 207);
+  transform: scale(1.2);
+  box-shadow: 0 0 4px #111;
+  transition: .3s;
+}
+
+svg {
+  color: rgb(231, 50, 50);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .3s;
+}
+
+.delete-button:focus svg {
+  opacity: 0;
+  transition: .3s;
+}
+
+.delete-button:focus {
+  width: 150px;
+  height: 50px;
+  transition: .3s;
+}
+
+ul {
+  list-style-type: none;
 }
 
 @keyframes App-logo-spin {
