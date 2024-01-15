@@ -41,7 +41,16 @@
   vertical-align: top;
 }
 
-textarea {
+.input {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  margin-top: 50px;
+  justify-content: center;
+}
+
+.input textarea {
+  position: relative;
   height: 150px;
   padding: 12px 20px;
   box-sizing: border-box;
@@ -52,17 +61,17 @@ textarea {
   resize: none;
 }
 
-button {
+.input button {
   position: relative;
   width: max-content;
   height: max-content;
   padding: 5px;
-  margin-left: 20px;
+  margin-left: 15px;
   border-radius: 25px;
-  border: 2px solid rgb(231, 50, 50);
+  border: 2px solid seagreen;
   background-color: #fff;
   cursor: pointer;
-  box-shadow: 0 0 10px #333;
+  box-shadow: 0 0 5px #333;
   overflow: hidden;
   transition: .3s;
 }
@@ -72,7 +81,7 @@ button {
   height: 50px;
 }
 
-.delete-button:hover {
+button:hover {
   background-color: rgb(245, 207, 207);
   transform: scale(1.2);
   box-shadow: 0 0 4px #111;

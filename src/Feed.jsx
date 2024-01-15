@@ -16,12 +16,13 @@ export function Feed() {
     return (
         <div>
             <p>Safe place to share creativity in all forms</p>
-            <label className="text-on-top">Share: </label>
-            <textarea name="Text1" cols="40" rows="5" value={post}
-                      onChange={(event) => {
-                          setPost(event.target.value);
-                      }}></textarea>
-            <button onClick={activateLasers}>Tell me everything</button>
+            <div className="input">
+                <textarea name="Text1" cols="40" rows="5" value={post}
+                          onChange={(event) => {
+                              setPost(event.target.value);
+                          }}></textarea>
+                <button onClick={activateLasers}>Tell everything</button>
+            </div>
             <ul>
                 {posts.map((post, index) => (
                     <li key={index}>
