@@ -36,6 +36,12 @@
 .App-link {
   color: #61dafb;
 }
+/* Background gradient source from Laura Robertson:
+   https://codepen.io/LauraRobertson/pen/eBjrgj */
+body {
+  background: linear-gradient(90deg, #cfecd0, #ffc5ca);
+  display: flow;
+}
 
 .text-on-top {
   vertical-align: top;
@@ -68,7 +74,7 @@
   padding: 5px;
   margin-left: 15px;
   border-radius: 25px;
-  border: 2px solid seagreen;
+  border: 2px #cfecd0;
   background-color: #fff;
   cursor: pointer;
   box-shadow: 0 0 5px #333;
@@ -77,8 +83,19 @@
 }
 
 .delete-button {
-  width: 50px;
-  height: 50px;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  border-radius: 25px;
+  padding: 0 2px 15px 2px;
+  border: 2px solid rgb(7, 7, 7);
+  background-color: rgba(231, 50, 50, 0.03);
+  cursor: pointer;
+  box-shadow: 0 0 5px #333;
+  overflow: hidden;
+  transition: .3s;
+  align-items: center;
+  justify-content: center;
 }
 
 button:hover {
@@ -88,28 +105,12 @@ button:hover {
   transition: .3s;
 }
 
-svg {
-  color: rgb(231, 50, 50);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: .3s;
-}
-
-.delete-button:focus svg {
-  opacity: 0;
-  transition: .3s;
-}
-
-.delete-button:focus {
-  width: 150px;
-  height: 50px;
-  transition: .3s;
-}
-
 ul {
   list-style-type: none;
+}
+
+li {
+  text-align: center;
 }
 
 @keyframes App-logo-spin {
