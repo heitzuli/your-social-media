@@ -1,15 +1,24 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 export function Feed() {
     const [post, setPost] = useState("");
     const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:8080/posts')
+            .then(response => response.json())
+            .then(json => setPosts(json))
+            .catch(error => console.error(error));
+    }, []);
+
     function activateLasers (event) {
         event.preventDefault();
         setPosts([...posts, post]);
         setPost("");
     }
-    function deactivateLasers (index) {
+    function deactivateLasers (id) {
         const newPosts = [...posts];
+        const index = newPosts.findIndex(post => post.id === id);
         newPosts.splice(index, 1);
         setPosts(newPosts);
     }
@@ -24,10 +33,10 @@ export function Feed() {
                 <button onClick={activateLasers}>Tell everything</button>
             </div>
             <ul>
-                {posts.map((post, index) => (
-                    <li key={index}>
-                        {post}
-                        <button className="delete-button" onClick={()=> deactivateLasers(index)}>
+                {posts.map((post) => (
+                    <li key={post.id}>
+                        {post.text}
+                        <button className="delete-button" onClick={()=> deactivateLasers(post.id)}>
                          x </button>
                     </li>
                 ))}
