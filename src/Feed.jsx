@@ -12,6 +12,13 @@ export function Feed() {
     }, []);
 
     function activateLasers (event) {
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({text: post})
+        };
+        fetch('http://localhost:8080/posts', requestOptions)
+
         event.preventDefault();
         setPosts([...posts, post]);
         setPost("");
